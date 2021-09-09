@@ -2,6 +2,11 @@ type Order {
   id: ID! @id
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
-  user: User @relation(link: INLINE)
-  movie: Movie @relation(link: INLINE)
+  function: Function @relation(link: INLINE)
+  seatings: [Seating!]! @relation(link: INLINE)
+  customer: User @relation(name: "OrderCustomer", link: INLINE)
+  seller: User @relation(name: "OrderSeller", link: INLINE)
+  cinema: Cinema @relation(name: "OrderCinema", link: INLINE)
+  cost: Float!
+  createdBy: User @relation(name: "OrderCreatedBy", link: INLINE)
 }

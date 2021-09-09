@@ -1,0 +1,12 @@
+type OrderProduct {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  function: Function @relation(link: INLINE)
+  customer: User @relation(name: "OrderProductCustomer", link: INLINE)
+  seller: User @relation(name: "OrderProductSeller", link: INLINE)
+  cinema: Cinema @relation(name: "OrderProductCinema", link: INLINE)
+  products: [Product!]! @relation(link: INLINE)
+  cost: Float!
+  createdBy: User @relation(name: "OrderProductCreatedBy", link: INLINE)
+}

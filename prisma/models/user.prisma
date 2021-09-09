@@ -5,4 +5,13 @@ type User {
   email: String! @unique
   password: String
   name: String!
+  role: Role
+}
+
+
+enum Role {
+  CUSTOMER 
+  EMPLOYEE
+  MANAGER
+  ADMIN
 }

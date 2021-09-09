@@ -1,0 +1,7 @@
+type Seating {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  hall: Hall @relation(link: INLINE)
+  createdBy: User @relation(link: INLINE)
+}

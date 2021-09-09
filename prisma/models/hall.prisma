@@ -1,0 +1,17 @@
+type Hall {
+  id: ID! @id
+  name: String!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  seatings: [Seating!]!
+  cinema: Cinema @relation(link: INLINE)
+  type: TypeHall
+  createdBy: User @relation(link: INLINE)
+}
+
+
+enum TypeHall {
+  NORMAL 
+  MACRO
+  JUNIOR
+}

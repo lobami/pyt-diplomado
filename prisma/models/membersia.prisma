@@ -1,0 +1,16 @@
+type Membersia {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  cinemaCreated: Cinema @relation(link: INLINE)
+  user: User @relation(name: "MembersiaUser", link: INLINE)
+  level: Level
+  createdBy: User @relation(name: "MembersiaCreatedBy", link: INLINE)
+}
+
+
+enum Level {
+  A 
+  B
+  C
+}

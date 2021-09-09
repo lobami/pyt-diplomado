@@ -1,0 +1,11 @@
+type EmployeeHours {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  day: DateTime!
+  employee: User @relation(name: "EmployeeHours", link: INLINE)
+  cinema: Cinema @relation(name: "EmployeeHoursCinema", link: INLINE)
+  createdBy: User @relation(name: "EmployeeHoursCreatedBy", link: INLINE)
+  hourlyInit: DateTime!
+  hourlStop: DateTime!
+}

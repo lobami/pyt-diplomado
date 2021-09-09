@@ -5,6 +5,16 @@ datamodel:
   - ./models/user.prisma
   - ./models/movie.prisma
   - ./models/order.prisma
+  - ./models/function.prisma
+  - ./models/hall.prisma
+  - ./models/cinema.prisma
+  - ./models/seating.prisma
+  - ./models/order_products.prisma
+  - ./models/product.prisma
+  - ./models/billboard.prisma
+  - ./models/membersia.prisma
+  - ./models/rh_data.prisma
+  - ./models/employee_hours.prisma
 
 generate:
   - generator: typescript-client

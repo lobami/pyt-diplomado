@@ -1,0 +1,23 @@
+type RHData {
+  id: ID! @id
+  employee: User @relation(name: "RHDataEmployee", link: INLINE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  dischargedAt: DateTime!
+  type: EmployeType
+  salary: Float!
+  active: Boolean
+  createdBy: User @relation(name: "RHDataCreatedBy", link: INLINE)
+  cinema: Cinema @relation(name: "RHDataCinema", link: INLINE)
+  comments: String
+}
+
+
+enum EmployeType {
+  MANAGER 
+  TICKET
+  CONFECTIONER
+  CLEANING
+  ACCESS
+  PROJECTION
+}

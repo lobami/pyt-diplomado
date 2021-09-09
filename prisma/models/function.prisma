@@ -1,0 +1,11 @@
+type Function {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  date: DateTime!
+  movie: Movie @relation(link: INLINE)
+  hall: Hall @relation(link: INLINE)
+  costHall: Float!
+  cinema: Cinema @relation(link: INLINE)
+  createdBy: User @relation(link: INLINE)
+}

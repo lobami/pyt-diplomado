@@ -1,0 +1,9 @@
+type Billboard {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  date: DateTime!
+  functions: [Function!]! @relation(link: INLINE)
+  createdBy: User @relation(link: INLINE, link: INLINE)
+  cinema: Cinema @relation(link: INLINE, link: INLINE)
+}

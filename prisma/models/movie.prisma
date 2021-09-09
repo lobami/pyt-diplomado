@@ -4,5 +4,22 @@ type Movie {
   updatedAt: DateTime! @updatedAt
   name: String!
   description: String!
-  genre: String!
+  genre: Genre
+  clasification: Clasification
+  createdBy: User @relation(link: INLINE)
+}
+
+
+enum Clasification {
+  B
+  B15
+  C 
+  D
+}
+
+enum Genre {
+  COMEDY 
+  HORROR
+  ROMANCE
+  MYSTERY
 }

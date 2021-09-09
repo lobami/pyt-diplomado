@@ -1,0 +1,20 @@
+type Product {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  name: String!
+  description: String!
+  type: TypeProduct
+  available: Boolean!
+  cost: Float!
+  cinemas_available: [Cinema!]! @relation(link: INLINE)
+  createdBy: User @relation(link: INLINE)
+}
+
+enum TypeProduct {
+  COMBO 
+  APPETIZER
+  FROZEN
+  CANDY
+  DRINK
+}

@@ -1,0 +1,15 @@
+type Cinema {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  address: String!
+  type: TypeCinema
+  createdBy: User @relation(link: INLINE)
+}
+
+
+enum TypeCinema {
+  MACRO 
+  NORMAL
+  PREMIUM
+}

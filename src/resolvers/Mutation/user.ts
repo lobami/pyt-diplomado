@@ -14,11 +14,13 @@ export default {
   updateUser: (parent, args: { data: any, where: any }, ctx: Context) => ctx.prisma.updateUser(args),
   createUser: (parent, { data }: { data: UserCreateInput}, ctx: Context) => {
     const token = randomstring.generate(8).toUpperCase();
+    const salt = bcrypt.genSaltSync(10)
+    const password = bcrypt.hashSync(data.password, salt)
     data = {
-      password: bcrypt.hashSync(data.password, 3),
       token,
-      ...data
+      ...data,
+      password
     };
-    return ctx.prisma.createUser(data);
+    return ctx.prisma.createUser(data)
   },
 };
